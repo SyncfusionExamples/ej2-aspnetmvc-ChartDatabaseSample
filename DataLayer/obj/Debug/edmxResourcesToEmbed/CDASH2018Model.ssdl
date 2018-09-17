@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CDASH2018Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="TbAssetManagementLifeCycleStatuses">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Hardware" Type="nvarchar(max)" />
+    <Property Name="Total" Type="bigint" />
+  </EntityType>
+  <EntityType Name="TbAssetManagementLinuxOsEndPoints">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Total" Type="bigint" />
+    <Property Name="LinuxEndPoint" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="TbAssetManagementSoftwareLicense">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="License" Type="int" />
+    <Property Name="Usage" Type="int" />
+    <Property Name="Version" Type="nvarchar(max)" />
+    <Property Name="Product" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="TbAssetManagementWindowsEndPoints">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Total" Type="bigint" />
+    <Property Name="WindowsOsEndPoint" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityContainer Name="CDASH2018ModelStoreContainer">
+    <EntitySet Name="TbAssetManagementLifeCycleStatuses" EntityType="Self.TbAssetManagementLifeCycleStatuses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TbAssetManagementLinuxOsEndPoints" EntityType="Self.TbAssetManagementLinuxOsEndPoints" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TbAssetManagementSoftwareLicense" EntityType="Self.TbAssetManagementSoftwareLicense" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TbAssetManagementWindowsEndPoints" EntityType="Self.TbAssetManagementWindowsEndPoints" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

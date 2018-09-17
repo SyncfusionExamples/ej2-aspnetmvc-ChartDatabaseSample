@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CDASH2018Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TbAssetManagementLifeCycleStatuses">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Hardware" Type="nvarchar(max)" />
+          <Property Name="Total" Type="bigint" />
+        </EntityType>
+        <EntityType Name="TbAssetManagementLinuxOsEndPoints">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Total" Type="bigint" />
+          <Property Name="LinuxEndPoint" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TbAssetManagementSoftwareLicense">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="License" Type="int" />
+          <Property Name="Usage" Type="int" />
+          <Property Name="Version" Type="nvarchar(max)" />
+          <Property Name="Product" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TbAssetManagementWindowsEndPoints">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Total" Type="bigint" />
+          <Property Name="WindowsOsEndPoint" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityContainer Name="CDASH2018ModelStoreContainer">
+          <EntitySet Name="TbAssetManagementLifeCycleStatuses" EntityType="Self.TbAssetManagementLifeCycleStatuses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TbAssetManagementLinuxOsEndPoints" EntityType="Self.TbAssetManagementLinuxOsEndPoints" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TbAssetManagementSoftwareLicense" EntityType="Self.TbAssetManagementSoftwareLicense" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TbAssetManagementWindowsEndPoints" EntityType="Self.TbAssetManagementWindowsEndPoints" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CDASH2018Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="CDASH2018Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TbAssetManagementLifeCycleStatuses" EntityType="CDASH2018Model.TbAssetManagementLifeCycleStatus" />
+          <EntitySet Name="TbAssetManagementLinuxOsEndPoints" EntityType="CDASH2018Model.TbAssetManagementLinuxOsEndPoint" />
+          <EntitySet Name="TbAssetManagementWindowsEndPoints" EntityType="CDASH2018Model.TbAssetManagementWindowsEndPoint" />
+          <EntitySet Name="TbAssetManagementSoftwareLicenses" EntityType="CDASH2018Model.TbAssetManagementSoftwareLicense" />
+        </EntityContainer>
+        <EntityType Name="TbAssetManagementLifeCycleStatus">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Hardware" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Total" Type="Int64" />
+        </EntityType>
+        <EntityType Name="TbAssetManagementLinuxOsEndPoint">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Total" Type="Int64" />
+          <Property Name="LinuxEndPoint" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TbAssetManagementWindowsEndPoint">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Total" Type="Int64" />
+          <Property Name="WindowsOsEndPoint" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TbAssetManagementSoftwareLicense">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="License" Type="Int32" />
+          <Property Name="Usage" Type="Int32" />
+          <Property Name="Version" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Product" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CDASH2018ModelStoreContainer" CdmEntityContainer="CDASH2018Entities">
+    <EntitySetMapping Name="TbAssetManagementLifeCycleStatuses">
+      <EntityTypeMapping TypeName="IsTypeOf(CDASH2018Model.TbAssetManagementLifeCycleStatus)">
+        <MappingFragment StoreEntitySet="TbAssetManagementLifeCycleStatuses">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Hardware" ColumnName="Hardware" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TbAssetManagementLinuxOsEndPoints">
+      <EntityTypeMapping TypeName="IsTypeOf(CDASH2018Model.TbAssetManagementLinuxOsEndPoint)">
+        <MappingFragment StoreEntitySet="TbAssetManagementLinuxOsEndPoints">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="LinuxEndPoint" ColumnName="LinuxEndPoint" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TbAssetManagementWindowsEndPoints">
+      <EntityTypeMapping TypeName="IsTypeOf(CDASH2018Model.TbAssetManagementWindowsEndPoint)">
+        <MappingFragment StoreEntitySet="TbAssetManagementWindowsEndPoints">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="WindowsOsEndPoint" ColumnName="WindowsOsEndPoint" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+          <EntitySetMapping Name="TbAssetManagementSoftwareLicenses">
+            <EntityTypeMapping TypeName="CDASH2018Model.TbAssetManagementSoftwareLicense">
+              <MappingFragment StoreEntitySet="TbAssetManagementSoftwareLicense">
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="Usage" ColumnName="Usage" />
+                <ScalarProperty Name="License" ColumnName="License" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

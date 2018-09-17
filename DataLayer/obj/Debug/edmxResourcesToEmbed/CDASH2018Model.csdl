@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CDASH2018Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="CDASH2018Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TbAssetManagementLifeCycleStatuses" EntityType="CDASH2018Model.TbAssetManagementLifeCycleStatus" />
+    <EntitySet Name="TbAssetManagementLinuxOsEndPoints" EntityType="CDASH2018Model.TbAssetManagementLinuxOsEndPoint" />
+    <EntitySet Name="TbAssetManagementWindowsEndPoints" EntityType="CDASH2018Model.TbAssetManagementWindowsEndPoint" />
+    <EntitySet Name="TbAssetManagementSoftwareLicenses" EntityType="CDASH2018Model.TbAssetManagementSoftwareLicense" />
+  </EntityContainer>
+  <EntityType Name="TbAssetManagementLifeCycleStatus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Hardware" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Total" Type="Int64" />
+  </EntityType>
+  <EntityType Name="TbAssetManagementLinuxOsEndPoint">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Total" Type="Int64" />
+    <Property Name="LinuxEndPoint" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TbAssetManagementWindowsEndPoint">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Total" Type="Int64" />
+    <Property Name="WindowsOsEndPoint" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TbAssetManagementSoftwareLicense">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="License" Type="Int32" />
+    <Property Name="Usage" Type="Int32" />
+    <Property Name="Version" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Product" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

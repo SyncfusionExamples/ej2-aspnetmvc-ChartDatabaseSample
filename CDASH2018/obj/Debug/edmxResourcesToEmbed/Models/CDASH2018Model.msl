@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CDASH2018ModelStoreContainer" CdmEntityContainer="CDASH2018Entities">
+    <EntitySetMapping Name="TbAssetManagementSoftwareLicenses">
+      <EntityTypeMapping TypeName="CDASH2018Model.TbAssetManagementSoftwareLicense">
+        <MappingFragment StoreEntitySet="TbAssetManagementSoftwareLicense">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="License" ColumnName="License" />
+          <ScalarProperty Name="Usage" ColumnName="Usage" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Product" ColumnName="Product" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

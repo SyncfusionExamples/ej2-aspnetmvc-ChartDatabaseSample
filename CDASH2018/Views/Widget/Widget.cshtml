@@ -1,0 +1,200 @@
+﻿@using Syncfusion.EJ2;
+@using Syncfusion.EJ2.Navigations;
+@using CDASH2018.Models.ViewModels;
+
+@{
+    var data = (WidgetViewModel)ViewData["data"];
+}
+
+<div class="col-lg-12 control-section card-control-section horizontal_card_layout">
+    <div class="e-card-resize-container">
+        <div class="row">
+            <div class="row card-layout">
+                <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                    <!-- Horizontal Card Layout for iphone-X Product -->
+                    <div id='horizontal_Sample'>
+                        <div tabindex="0" class="e-card e-card-horizontal" id="horizontal_product">
+                            <div class="e-card-stacked">
+                                <div class="e-card-header">
+                                    <div class="e-card-header-caption">
+                                        <table>
+                                            <tr>
+                                                <td><div class="e-card-header-title">Asset Management Life Cyle Status</div></td>
+                                                <td>
+                                                    <div style="float: right">
+                                                        @Html.EJS().Toolbar("defaultToolbar").Clicked("clicked").Items(ViewBag.tbItems).Render()
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr></tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="e-card-separator e-card-left"></div>
+                                <div class="e-card-content" style="height: 146px">
+                                    <div id='container' style="height: 146px">
+                                        @Html.EJS().Chart("container").Series(series =>
+       {
+           series.Type(Syncfusion.EJ2.Charts.ChartSeriesType.Column).XName("Hardware").YName("Total").ColumnSpacing(0.2).DataSource(@data.AssetManagementLifeCycleStatus).Add();
+       }).PrimaryXAxis(px => px.ValueType(Syncfusion.EJ2.Charts.ValueType.Category).MajorGridLines(ViewBag.width).LabelRotation(-45)).PrimaryYAxis(py =>py.Minimum(0).Interval(400).LineStyle(ViewBag.width).Maximum(1200)).ChartArea(ca =>ca.Border(br =>br.Width(0.0001))).PointRender("pointRender2").Render()
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Horizontal Card Layout for Canon Product -->
+                        <div tabindex="0" class="e-card e-card-horizontal" id="horizontal_product">
+                            <div class="e-card-stacked">
+                                <div class="e-card-header">
+                                    <div class="e-card-header-caption">
+                                        <table>
+                                            <tr>
+                                                <td><div class="e-card-header-title">Asset Management Linus OS Endpoints</div></td>
+                                                <td>
+                                                    <div style="float: right">
+                                                        @Html.EJS().Toolbar("defaultToolbar1").Clicked("clicked1").Items(ViewBag.tbItems).Render()
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr></tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="e-card-separator e-card-left"></div>
+                                <div class="e-card-content" style="height: 146px">
+                                    <div id='container1' style="height: 146px">
+                                        @Html.EJS().Chart("container1").Series(series =>
+                                   {
+                                       series.Type(Syncfusion.EJ2.Charts.ChartSeriesType.Column).XName("Name").YName("Total").ColumnSpacing(0.3).Marker(mr => mr.DataLabel(dl => dl.Visible(true).Position(Syncfusion.EJ2.Charts.LabelPosition.Outer))).DataSource(@data.AssetManagementLinuxOsEndPoint).Add();
+                                   }).PrimaryXAxis(px => px.ValueType(Syncfusion.EJ2.Charts.ValueType.Category).MajorGridLines(ViewBag.width)).PrimaryYAxis(py =>py.Minimum(0).Interval(500).LineStyle(ViewBag.width).Maximum(1500)).ChartArea(ca => ca.Border(br => br.Width(0.0001))).PointRender("pointRender").Render()
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                    <div id="vertical_Sample">
+                        <!-- Horizontal Card Layout for Philips Trimmer Product -->
+                        <div tabindex="0" class="e-card e-card-horizontal" id="horizontal_product">
+                            <div class="e-card-stacked">
+                                <div class="e-card-header">
+                                    <div class="e-card-header-caption">
+                                        <table>
+                                            <tr>
+                                                <td><div class="e-card-header-title">Asset Management Windows OS Endpoints</div></td>
+                                                <td>
+                                                    <div style="float: right">
+                                                        @Html.EJS().Toolbar("defaultToolbar2").Clicked("clicked2").Items(ViewBag.tbItems).Render()
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr></tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="e-card-separator e-card-left"></div>
+                                <div class="e-card-content" style="height: 146px">
+                                    <div id='container2' style="height: 146px">
+                                        @Html.EJS().Chart("container2").Series(series =>
+                                   {
+                                       series.Type(Syncfusion.EJ2.Charts.ChartSeriesType.Column).XName("Name").YName("Total").ColumnSpacing(0.3).Marker(mr => mr.DataLabel(dl => dl.Visible(true).Position(Syncfusion.EJ2.Charts.LabelPosition.Outer))).DataSource(@data.AssetManagementWindowsEndPoint).Add();
+                                   }).PrimaryXAxis(px => px.ValueType(Syncfusion.EJ2.Charts.ValueType.Category).MajorGridLines(ViewBag.width)).PointRender("pointRender1").PrimaryYAxis(py => py.Minimum(0).LineStyle(ViewBag.width).Interval(500).Maximum(1500)).ChartArea(ca => ca.Border(br => br.Width(0.0001))).Render()
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Horizontal Card Layout for Canon Product -->
+                        <div tabindex="0" class="e-card e-card-horizontal" id="horizontal_product">
+                            <div class="e-card-stacked">
+                                <div class="e-card-header">
+                                    <div class="e-card-header-caption">
+                                        <table>
+                                            <tr>
+                                                <td><div class="e-card-header-title">Asset Management Software Licenses</div></td>
+                                                <td>
+                                                    <div style="float: right">
+                                                      @Html.EJS().Toolbar("defaultToolbar3").Clicked("clicked3").Items(ViewBag.tbItems).Render()
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr></tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="e-card-separator e-card-left"></div>
+                                <div class="e-card-content" style="height: 146px">
+                                    <div id='container3' style="height: 146px">
+                                        @Html.EJS().Chart("container3").Series(series =>
+                                   {
+                                       series.Type(Syncfusion.EJ2.Charts.ChartSeriesType.Column).XName("Product").YName("License").Fill("#0000FF").ColumnSpacing(0.2).Name("Licenses").DataSource(@data.AssetManagementSoftwareLicense).Add();
+                                       series.Type(Syncfusion.EJ2.Charts.ChartSeriesType.Column).XName("Product").YName("Usage").Fill("#FF8000").ColumnSpacing(0.2).Name("Usage").DataSource(@data.AssetManagementSoftwareLicense).Add();
+                                   }).PrimaryXAxis(px => px.ValueType(Syncfusion.EJ2.Charts.ValueType.Category).MajorGridLines(ViewBag.width)).PrimaryYAxis(py => py.Minimum(0).Interval(10).LineStyle(ViewBag.width).Maximum(40)).ChartArea(ca => ca.Border(br => br.Width(0.0001))).LegendSettings(ls => ls.Visible(true).Position(Syncfusion.EJ2.Charts.LegendPosition.Top)).Render()
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var colors = ['#00CC66', '#9933FF', '#CC0000', '#9999FF'];
+    function pointRender(args) {
+        args.fill = colors[args.point.index % 10];
+    }
+
+    var colors1 = ['#FF6666', '#FFFF00', '#99CCFF', '#FF6666', '#FFFF00', '#99CCFF'];
+    function pointRender1(args) {
+        args.fill = colors1[args.point.index % 10];
+    }
+
+    var colors2 = ['#9999FF', '#FF6666', '#FFFF66', '#CCCCFF', '#A0A0A0', '#9999FF', '#00CC66', '#FFFF99', '#FF6666', '#FFFF00', '#9999FF'];
+    function pointRender2(args) {
+        args.fill = colors2[args.point.index % 10];
+    }
+    function clicked(args) {
+        if (args.item.properties.prefixIcon == 'e-print-icon tb-icons') {
+            var chart = document.getElementById('container').ej2_instances[0];
+            chart.print();
+        }
+    }
+    function clicked1(args) {
+        if (args.item.properties.prefixIcon == 'e-print-icon tb-icons') {
+            var chart = document.getElementById('container1').ej2_instances[0];
+            chart.print();
+        }
+    }
+    function clicked2(args) {
+        if (args.item.properties.prefixIcon == 'e-print-icon tb-icons') {
+            var chart = document.getElementById('container2').ej2_instances[0];
+            chart.print();
+        }
+    }
+    function clicked3(args) {
+        if (args.item.properties.prefixIcon == 'e-print-icon tb-icons') {
+            var chart = document.getElementById('container3').ej2_instances[0];
+            chart.print();
+        }
+    }
+</script>
+<style>
+    .card-control-section.horizontal_card_layout #vertical_Sample .e-card:first-child {
+        margin-bottom: 10px;
+    }
+
+    .card-control-section.horizontal_card_layout #horizontal_Sample .e-card:first-child {
+        margin-bottom: 10px;
+    }
+
+
+    
+    .e-print-icon::before {
+        content: '\e5c5';
+    }
+
+    .e-close-icon::before {
+        content: '\e7e9';
+    }
+</style>
