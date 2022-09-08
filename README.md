@@ -1,6 +1,6 @@
 # How to add DataBase in ASP.NET MVC Chart?
 
-This sample explains that how to add database in ASP.NET MVC Chart.
+This sample explains that how to bind database to the ASP.NET MVC Chart.
 
 ## Prerequisites
 
