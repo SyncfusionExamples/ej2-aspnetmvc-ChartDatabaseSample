@@ -4,7 +4,8 @@ This sample explains that how to bind database to the ASP.NET MVC Chart.
 
 ## Prerequisites
 
-Visual Studio 2022
+* Visual Studio 2022
+* Visual Studio Code
 
 ## How to run this application?
 
